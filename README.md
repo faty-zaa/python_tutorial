@@ -37,17 +37,29 @@ and as	assert break class continue def	del	elif else except False finally for fr
 # Functions && Variables in Python
 
 to get from the standard input we use:`input()`
+
 to write to the standard output we use:`print()`
+
 to get the adress of somthing:`id(something)`
+
 to delete a variable:`del varible_name`
+
 to know the type of varible:`type(varibal_name)`
+
 we can declre multiple variables at once :`a,b,c = 1,2,"fatyzaa"`
+
 type casting in python: `a = 3 --> a = str(3) --> a = '3'`
+
 A variable name must start with a letter or the underscore character.
+
 Python Local Variables are defined inside a function.
+
 Python doesn't have any formally defined constants.
+
 A Python variable refers to the object and not the memory location.
+
 An object is stored in memory only once.
+
 private variables are defined by adding a double underscore (__) and can't acess without using a method or Name Mangling(we'll see this in OOP).
 
 
