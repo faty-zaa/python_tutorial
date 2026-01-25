@@ -1,4 +1,3 @@
-# python_tutorial
 *This introduction to python 3.10+ for beginners has been created by FALAMLIH*
 
 # PYTHON
@@ -34,20 +33,48 @@ https://www.tutorialspoint.com/python/python_variables.htm
 
 and as	assert break class continue def	del	elif else except False finally for from global if import in is lambda None nonlocal not or pass raise return True try while with yield
 
+# Data types
+
+int (signed integers)
+
+float (floating point real values)
+
+complex (complex numbers)
+
+string (non-numeric data type)
+
+List Data Type : [2023, "hi", 3.11, 5+6j, 1.23E]
+
+Tuple Data Type : (2023, "hi", 3.11, 5+6j, 1.23E) read-only lists
+
+Range Data Type : range(start, stop, step)
+
+bytes :  bytes() function or by prefixing a sequence of numbers with b
+
+bytearray : you can modify the values stored in it after it is created (bytearray() function)
+
+memoryview :  view into the memory of the original object ( memoryview())
+
+Dictionary :  Data is stored as key: value pairs within curly braces {}
+    Using curly braces
+        my_dict = {"name": "Jake", "age": 22, "city": "London"}
+    Using the dict() constructor
+        another_dict = dict(brand="Ford", model="Mustang", year=1964)
+
+set : an unordered collection of unique elements, Duplicate items are not allowed
+
+Boolean : True / False
+
+None : the null type of values or absence of a valuel
+
 # Functions && Variables in Python
 
 to get from the standard input we use:`input()`
-
 to write to the standard output we use:`print()`
-
 to get the adress of somthing:`id(something)`
-
 to delete a variable:`del varible_name`
-
 to know the type of varible:`type(varibal_name)`
-
 we can declre multiple variables at once :`a,b,c = 1,2,"fatyzaa"`
-
 type casting in python: `a = 3 --> a = str(3) --> a = '3'`
 
 A variable name must start with a letter or the underscore character.
@@ -56,11 +83,9 @@ Python Local Variables are defined inside a function.
 
 Python doesn't have any formally defined constants.
 
-A Python variable refers to the object and not the memory location.
-
+A Python variable refers to the object and not the memory 
+location.
 An object is stored in memory only once.
 
 private variables are defined by adding a double underscore (__) and can't acess without using a method or Name Mangling(we'll see this in OOP).
 
-
- 
