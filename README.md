@@ -80,11 +80,17 @@ None : the null type of values or absence of a valuel
 # Functions && Variables in Python
 
 to get from the standard input we use:`input()`
+
 to write to the standard output we use:`print()`
+
 to get the adress of somthing:`id(something)`
+
 to delete a variable:`del varible_name`
+
 to know the type of varible:`type(varibal_name)`
+
 we can declre multiple variables at once :`a,b,c = 1,2,"fatyzaa"`
+
 type casting in python: `a = 3 --> a = str(3) --> a = '3'`
 
 A variable name must start with a letter or the underscore character.
