@@ -43,6 +43,25 @@ and as	assert break class continue def	del	elif else except False finally for fr
 
 ("" or """ """)multilines comments
 
+conditions : if, elif, else, for else, while, while else, break, continue, pass
+
+pass : Does nothing; a null operation.
+
+break : Terminates the loop entirely.
+
+continue : Skips the rest of the code inside the loop for the current iteration and proceeds to the next iteration.
+
+return : Exits the current function and optionally returns a value
+
+match-case has been introduced, which is similar to the switch-case construct available in C/C++/Java etc.
+    EXAMPLE :
+        match variable_name:
+            case 'pattern 1' : statement 1
+            case 'pattern 2' : statement 2
+
+The for loop in Python provides the ability to loop over the items of any sequence --> for num in numbers:
+                 total += num
+
 # Data types
 
 int (signed integers)
@@ -52,6 +71,8 @@ float (floating point real values)
 complex (complex numbers)
 
 string (non-numeric data type)
+
+raw string is a string literal created by prefixing the string with the letter r or R. This tells the Python interpreter to treat backslashes (\) as literal characters, rather than as special escape characters. (raw_string = r"This is a newline:\n" --> This is a newline:\n)
 
 List Data Type : [2023, "hi", 3.11, 5+6j, 1.23E]
 
@@ -106,20 +127,19 @@ An object is stored in memory only once.
 private variables are defined by adding a double underscore (__) and can't acess without using a method or Name Mangling(we'll see this in OOP).
 
 Type casting :  the process of converting a value from one data type to another to ensure compatibility and perform specific operations
+we can cast a string to a list, modify the list using methods like insert(), append(), or remove() and then convert the list back to a string to obtain a modified version.
 
-if, elif, else
+Defining a Python Function --> def function_name( parameters ):
 
-match-case has been introduced, which is similar to the switch-case construct available in C/C++/Java etc.
-    EXAMPLE :
-        match variable_name:
-            case 'pattern 1' : statement 1
-            case 'pattern 2' : statement 2
+Lambda forms can take any number of arguments but return just one value in the form of an expression --> sum = lambda arg1, arg2: arg1 + arg2; print ("Value of total : ", sum( 10, 20 ))
 
-The for loop in Python provides the ability to loop over the items of any sequence --> for num in numbers:
-                                                                                            total += num
-
+for more details (positional, arbitary, kyword & default arguments ...): https://www.tutorialspoint.com/python/python_functions.htm
 
 # Python Operators
 
 Addition(+), Subtraction(-), Multiplication(*), Division(/), Modulus(%), Exponent(**), floor division(// -> (9//2 = 4)), Equal(==), Not equal(!=), Greater/less than(> / <), Greater than or equal to(>=), Less than or equal to(<=), "and", "or" and "not"
 for more : https://www.w3schools.com/python/python_operators.asp
+
+# OOP (Object-oriented programming)
+
+
