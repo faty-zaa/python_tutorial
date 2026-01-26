@@ -115,6 +115,8 @@ match-case has been introduced, which is similar to the switch-case construct av
             case 'pattern 1' : statement 1
             case 'pattern 2' : statement 2
 
+The for loop in Python provides the ability to loop over the items of any sequence --> for num in numbers:
+                                                                                            total += num
 
 
 # Python Operators
