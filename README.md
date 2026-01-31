@@ -122,6 +122,7 @@ Python doesn't have any formally defined constants.
 
 A Python variable refers to the object and not the memory 
 location.
+
 An object is stored in memory only once.
 
 private variables are defined by adding a double underscore (__) and can't acess without using a method or Name Mangling(we'll see this in OOP).
@@ -142,4 +143,63 @@ for more : https://www.w3schools.com/python/python_operators.asp
 
 # OOP (Object-oriented programming)
 
+is defined as a programming model that uses the concept of objects which refers to real-world entities with state and behavior
 
+Class → blueprint
+
+Object → real thing
+
+__init__ → setup function
+
+self → the object itself
+
+__main__
+(if __name__ == "__main__") :
+    Every Python file has a built-in variable called __name__.
+    If you run the file directly, Python sets __name__ to "__main__".
+    If the file is imported into another file, __name__ is set to the filename instead.
+
+`Class attributes` are those variables that belong to a class and whose value is shared among all the instances of that class
+
+`Built-In Class Attributes`:
+__dict__ − Dictionary containing the class's namespace.
+
+__doc__ − Class documentation string or none, if undefined.
+
+__name__ − Class name.
+
+__module__ − Module name in which the class is defined. This attribute is "__main__" in interactive mode.
+
+__bases__ − A possibly empty tuple containing the base classes, in the order of their occurrence in the base class list.
+
+`instance attribute` in Python is a variable that is specific to an individual object of a class. It is defined inside the __init__() method.
+
+__init__ is a special function inside a class
+p = Plant("Rose", 10, 3)
+Python automatically calls:
+Plant.__init__(p, "Rose", 10, 3)
+
+We need __init__ to:
+
+Give the object starting values
+
+Make sure the object is ready to use
+
+Avoid creating empty objects with no data
+
+`Encapsulation` = keeping data and the code that uses it together, and protecting it from misuse, it hide internal data & control how it is accessed or modified by using private attributes, setters and gtters
+
+`Public Variables`: Public variables are accessible from anywhere, both inside and outside the class. In the image, a public place is considered as an analogy for public variables as they can be accessed by anyone.
+
+`Protected Variables`: Protected variable can be accessed within the class and its subclasses. In the image, a private domicile is considered as an analogy for protected variables as they can be accessed by family members (subclasses) but not by outsiders.
+
+`Private Variables`: Private variables are only accessible  within the class they are defined in. In the image, a vault is considered as an analogy for private variables as they can only be accessed by the owner (the class itself) and not by anyone else.
+
+you can access the private variable using name mangling
+
+`Name mangling` is:
+    Python’s automatic renaming of class attributes that start with double underscores (__) to include the class name, in order to avoid name conflicts and accidental overrides, especially in subclasses.
+        __name → _ClassName__name
+
+`Inheritance` is:
+    An OOP mechanism where a class derives from another class, reusing its behavior and state while guaranteeing that the derived class can be used anywhere the base class is expected without breaking program correctness.
