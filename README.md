@@ -203,3 +203,7 @@ you can access the private variable using name mangling
 
 `Inheritance` is:
     An OOP mechanism where a class derives from another class, reusing its behavior and state while guaranteeing that the derived class can be used anywhere the base class is expected without breaking program correctness.
+
+`super()` is:
+A built-in function that gives a child class access to the parent class’s methods, allowing the parent behavior to run as part of the child’s implementation
+
