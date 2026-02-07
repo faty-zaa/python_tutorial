@@ -211,6 +211,8 @@ you can access the private variable using name mangling
 It tells Python:
 “There must be a statement here, but I intentionally want nothing to happen.”
 
+# Python errors
+
 `raising error` :
     “This situation is invalid. Stop normal execution”
     *raise stops normal execution and signals that an error has occurred
