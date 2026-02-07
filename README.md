@@ -186,7 +186,7 @@ Give the object starting values
 Make sure the object is ready to use
 
 Avoid creating empty objects with no data
-
+ ft_command_quest.py
 `Encapsulation` = keeping data and the code that uses it together, and protecting it from misuse, it hide internal data & control how it is accessed or modified by using private attributes, setters and gtters
 
 `Public Variables`: Public variables are accessible from anywhere, both inside and outside the class. In the image, a public place is considered as an analogy for public variables as they can be accessed by anyone.
@@ -203,7 +203,24 @@ you can access the private variable using name mangling
 
 `Inheritance` is:
     An OOP mechanism where a class derives from another class, reusing its behavior and state while guaranteeing that the derived class can be used anywhere the base class is expected without breaking program correctness.
+    *super() function allows you to access methods and attributes of the parent class from within a child class.
 
-`super()` is:
-A built-in function that gives a child class access to the parent class’s methods, allowing the parent behavior to run as part of the child’s implementation
 
+
+`pass` is a do-nothing statement.
+It tells Python:
+“There must be a statement here, but I intentionally want nothing to happen.”
+
+`raising error` :
+    “This situation is invalid. Stop normal execution”
+    *raise stops normal execution and signals that an error has occurred
+    *Looks for the nearest matching except
+    *If none is found → program crashes
+
+`Exception` is the base class for almost  all runtime errors in Python
+ you can defend your program by placing the suspicious code in a try: block. After the try: block, include an except: statement, followed by a block of code which handles the problem as elegantly as possible
+
+ An `exception class` is a specialized class in object-oriented programming that serves as a blueprint for creating exception objects, which represent runtime errors or unusual conditions encountered during program execution
+ 
+`The finally block` in Python is used within a try statement to define a section of code that will always execute, regardless of whether an exception was raised, handled, or not
+The primary purpose of the finally block is to ensure that essential cleanup actions are performed in all circumstances
