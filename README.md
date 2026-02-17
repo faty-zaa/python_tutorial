@@ -6,6 +6,8 @@ universal character encoding standard that assigns a unique numeric value (code 
 
 # PYTHON
 
+#!/usr/bin/python3
+
 general-purpose interpreted, interactive, object-oriented, and high-level programming language. Python is dynamically-typed and garbage-collected programming language.
 
  Python is processed at runtime by the interpreter. You do not need to compile your program before executing it, also Python is a completely object-oriented language. Everything in a Python program is an object.
@@ -226,3 +228,59 @@ It tells Python:
  
 `The finally block` in Python is used within a try statement to define a section of code that will always execute, regardless of whether an exception was raised, handled, or not
 The primary purpose of the finally block is to ensure that essential cleanup actions are performed in all circumstances
+
+`the with statement` is a control flow structure that ensures a setup action is performed when a block of code is entered and a corresponding cleanup action is performed when the block is exited, even if errors occur. This mechanism is known as a context manager.
+it Replaces long try-except–finally blocks with cleaner syntax.
+
+# Python modules
+
+A `module` is a file containing definition of functions, classes, variables, constants or any other Python object
+Python has the import keyword for this purpose
+    `SYS` :This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter
+    the sys module provides a variable called sys.argv. It's main purpose are:
+    It is a list of command-line arguments.
+    len(sys.argv) provides the number of command-line arguments.
+    sys is a built-in Python module that gives your program direct access to the Python runtime and the operating system interface
+
+# python data types
+
+`lists[]` :A List is a collection of ordered, mutable (Elements can be modified after creation) elements that can hold a variety of data types
+    Example: [1, 2, 3, 4, 5]
+we don't put values in list with index, we use append()
+
+`sets{}` :A Set is an unordered collection of unique elements, Duplicate values are automatically removed, does not Support indexing and slicing
+    Example: {1, 2, 3, 4, 5}
+    `intersection`: used to see common data
+    `union`: to union data
+    `difference`: to see the unique data between datas
+
+`Tuples()` :A Tuple is an ordered, immutable collection of elements, Once created, elements cannot be modified
+Tuples are hashable and can be used as dictionary keys, unlike lists.
+Hashable = something Python can lock in a box and trust it will never change
+    Example: (1, 2, 3, 4, 5)
+tuples protect the structure of your data
+Tuples can be dictionary keys
+    `Unpacking` means:
+    Taking a collection (tuple, list, etc.) and assigning its elements to multiple variables in one line.
+
+`Dictionaries{}` :A dictionary (dic()) is also a non-homogeneous data structure that stores key-value pairs, The dictionary doesn't allow duplicate keys
+    Example: {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}
+    ->keys() : gives you only the names
+    ->values() : gives you only the values or numbers
+    ->items() : name + number together as tuples
+        You can loop like this:
+            for item, quantity in bag.items():
+                print(item, quantity)
+    ->get() : Safely gets a value without crashing
+        get(key, default)
+            Means:
+            “If the key exists → give me its value
+            If it doesn’t exist → give me this default”
+    ->update() : Adds or changes many things at once /ex:bag.update({"apple": 5, "pear": 2})
+    !!!important: if you have nested dictionnaries, you can use ft.items() to get nested dictionnaries, and if there is another nested dict, use the key of each or loop to get values like that :
+         print(players.items())
+        print(players["alice"].items())
+        print(players["bob"]["items"].items())
+    
+
+
