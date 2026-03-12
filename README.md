@@ -143,6 +143,106 @@ for more details (positional, arbitary, kyword & default arguments ...): https:/
 Addition(+), Subtraction(-), Multiplication(*), Division(/), Modulus(%), Exponent(**), floor division(// -> (9//2 = 4)), Equal(==), Not equal(!=), Greater/less than(> / <), Greater than or equal to(>=), Less than or equal to(<=), "and", "or" and "not"
 for more : https://www.w3schools.com/python/python_operators.asp
 
+
+# Python errors
+
+`raising error` :
+    “This situation is invalid. Stop normal execution”
+    *raise stops normal execution and signals that an error has occurred
+    *Looks for the nearest matching except
+    *If none is found → program crashes
+
+`Exception` is the base class for almost  all runtime errors in Python
+ you can defend your program by placing the suspicious code in a try: block. After the try: block, include an except: statement, followed by a block of code which handles the problem as elegantly as possible
+
+ An `exception class` is a specialized class in object-oriented programming that serves as a blueprint for creating exception objects, which represent runtime errors or unusual conditions encountered during program execution
+ 
+`The finally block` in Python is used within a try statement to define a section of code that will always execute, regardless of whether an exception was raised, handled, or not
+The primary purpose of the finally block is to ensure that essential cleanup actions are performed in all circumstances
+
+`the with statement` is a control flow structure that ensures a setup action is performed when a block of code is entered and a corresponding cleanup action is performed when the block is exited, even if errors occur. This mechanism is known as a context manager.
+it Replaces long try-except–finally blocks with cleaner syntax.
+    If a file isn’t closed properly, you may get:
+        resource leaks
+        corrupted or incomplete data
+        locked files
+        crashes in long-running programs
+
+# Python modules
+
+A `module` is a file containing definition of functions, classes, variables, constants or any other Python object
+Python has the import keyword for this purpose
+    `SYS` :This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter
+    the sys module provides a variable called sys.argv. It's main purpose are:
+    It is a list of command-line arguments.
+    len(sys.argv) provides the number of command-line arguments.
+    sys is a built-in Python module that gives your program direct access to the Python runtime and the operating system interface
+The ____init__.py file in Python serves two primary purposes: it marks a directory as a regular Python package, and it provides a place for initialization code when that package is importe
+
+# Python data types
+
+`lists[]` :A List is a collection of ordered, mutable (Elements can be modified after creation) elements that can hold a variety of data types
+    Example: [1, 2, 3, 4, 5]
+we don't put values in list with index, we use append()
+
+`sets{}` :A Set is an unordered collection of unique elements, Duplicate values are automatically removed, does not Support indexing and slicing
+    Example: {1, 2, 3, 4, 5}
+    `intersection`: used to see common data
+    `union`: to union data
+    `difference`: to see the unique data between datas
+
+`Tuples()` :A Tuple is an ordered, immutable collection of elements, Once created, elements cannot be modified
+Tuples are hashable and can be used as dictionary keys, unlike lists.
+Hashable = something Python can lock in a box and trust it will never change
+    Example: (1, 2, 3, 4, 5)
+tuples protect the structure of your data
+Tuples can be dictionary keys
+    `Unpacking` means:
+    Taking a collection (tuple, list, etc.) and assigning its elements to multiple variables in one line.
+
+`Dictionaries{}` :A dictionary (dic()) is also a non-homogeneous data structure that stores key-value pairs, The dictionary doesn't allow duplicate keys
+    Example: {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}
+    ->keys() : gives you only the names
+    ->values() : gives you only the values or numbers
+    ->items() : name + number together as tuples
+        You can loop like this:
+            for item, quantity in bag.items():
+                print(item, quantity)
+    ->get() : Safely gets a value without crashing
+        get(key, default)
+            Means:
+            “If the key exists → give me its value
+            If it doesn’t exist → give me this default”
+    ->update() : Adds or changes many things at once /ex:bag.update({"apple": 5, "pear": 2})
+    !!!important: if you have nested dictionnaries, you can use ft.items() to get nested dictionnaries, and if there is another nested dict, use the key of each or loop to get values like that :
+         print(players.items())
+        print(players["alice"].items())
+        print(players["bob"]["items"].items())
+
+    
+# Python generators && comprehension
+
+`generator` is a function that acts as an iterator to produce a sequence of values one at a time, and only when requested. They are memory efficient because they don't store the entire sequence in memory at once; instead, they pause their execution with the `yield` keyword and resume when the next value is needed.
+
+`comprehension`:
+
+
+# python I/O
+
+`open`:Python's built-in open() function is used to open files in various modes, such as reading, writing, and appending
+    file = open("filename", "mode")
+    Where, filename is the name of the file to open and mode is the mode in which the file is opened (e.g., 'r' for reading, 'w' for writing, 'a' for appending)
+`r`:
+Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode of open
+`w`:
+Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing
+
+`CONTEXT MANAGERS`
+
+`WITH STATEMENT`
+
+`RAII`
+
 # OOP (Object-oriented programming)
 
 is defined as a programming model that uses the concept of objects which refers to real-world entities with state and behavior
@@ -207,80 +307,26 @@ you can access the private variable using name mangling
     An OOP mechanism where a class derives from another class, reusing its behavior and state while guaranteeing that the derived class can be used anywhere the base class is expected without breaking program correctness.
     *super() function allows you to access methods and attributes of the parent class from within a child class.
 
-
-
 `pass` is a do-nothing statement.
 It tells Python:
 “There must be a statement here, but I intentionally want nothing to happen.”
 
-# Python errors
-
-`raising error` :
-    “This situation is invalid. Stop normal execution”
-    *raise stops normal execution and signals that an error has occurred
-    *Looks for the nearest matching except
-    *If none is found → program crashes
-
-`Exception` is the base class for almost  all runtime errors in Python
- you can defend your program by placing the suspicious code in a try: block. After the try: block, include an except: statement, followed by a block of code which handles the problem as elegantly as possible
-
- An `exception class` is a specialized class in object-oriented programming that serves as a blueprint for creating exception objects, which represent runtime errors or unusual conditions encountered during program execution
- 
-`The finally block` in Python is used within a try statement to define a section of code that will always execute, regardless of whether an exception was raised, handled, or not
-The primary purpose of the finally block is to ensure that essential cleanup actions are performed in all circumstances
-
-`the with statement` is a control flow structure that ensures a setup action is performed when a block of code is entered and a corresponding cleanup action is performed when the block is exited, even if errors occur. This mechanism is known as a context manager.
-it Replaces long try-except–finally blocks with cleaner syntax.
-
-# Python modules
-
-A `module` is a file containing definition of functions, classes, variables, constants or any other Python object
-Python has the import keyword for this purpose
-    `SYS` :This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter
-    the sys module provides a variable called sys.argv. It's main purpose are:
-    It is a list of command-line arguments.
-    len(sys.argv) provides the number of command-line arguments.
-    sys is a built-in Python module that gives your program direct access to the Python runtime and the operating system interface
-
-# python data types
-
-`lists[]` :A List is a collection of ordered, mutable (Elements can be modified after creation) elements that can hold a variety of data types
-    Example: [1, 2, 3, 4, 5]
-we don't put values in list with index, we use append()
-
-`sets{}` :A Set is an unordered collection of unique elements, Duplicate values are automatically removed, does not Support indexing and slicing
-    Example: {1, 2, 3, 4, 5}
-    `intersection`: used to see common data
-    `union`: to union data
-    `difference`: to see the unique data between datas
-
-`Tuples()` :A Tuple is an ordered, immutable collection of elements, Once created, elements cannot be modified
-Tuples are hashable and can be used as dictionary keys, unlike lists.
-Hashable = something Python can lock in a box and trust it will never change
-    Example: (1, 2, 3, 4, 5)
-tuples protect the structure of your data
-Tuples can be dictionary keys
-    `Unpacking` means:
-    Taking a collection (tuple, list, etc.) and assigning its elements to multiple variables in one line.
-
-`Dictionaries{}` :A dictionary (dic()) is also a non-homogeneous data structure that stores key-value pairs, The dictionary doesn't allow duplicate keys
-    Example: {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}
-    ->keys() : gives you only the names
-    ->values() : gives you only the values or numbers
-    ->items() : name + number together as tuples
-        You can loop like this:
-            for item, quantity in bag.items():
-                print(item, quantity)
-    ->get() : Safely gets a value without crashing
-        get(key, default)
-            Means:
-            “If the key exists → give me its value
-            If it doesn’t exist → give me this default”
-    ->update() : Adds or changes many things at once /ex:bag.update({"apple": 5, "pear": 2})
-    !!!important: if you have nested dictionnaries, you can use ft.items() to get nested dictionnaries, and if there is another nested dict, use the key of each or loop to get values like that :
-         print(players.items())
-        print(players["alice"].items())
-        print(players["bob"]["items"].items())
+# POLYMORPHISM AND ABSTRACTION
+    Polymorphism means "many forms". In programming it means "many types" and refers to the possibility that a single object may have multiple types.
     
+`ABSTRACT CLASSES`:
+    A class that cannot be instantiated directly; it defines a template for its subclasses
+    it Forces all subclasses to implement certain methods
+[text](https://www.cs.sjsu.edu/faculty/pearce/modules/lectures/ood3/concepts/polymorphism.htm)
+
+`protocol`:
 
 
+
+
+
+# pydantic 
+str : min_length, max_length, pattern, strip_whitespace, to_lower, to_upper
+int, float : gt (>), ge(>=), lt(<), le(<=), multiple_of
+bool: default, description, alias
+list: min_length, max_length
