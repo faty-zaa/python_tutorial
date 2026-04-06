@@ -322,8 +322,24 @@ It tells Python:
 `protocol`:
 
 
+# venv
+A separate Python workspace with its own packages and Python interpreter
+to creat a virtual env:
+    python -m venv matrix_env
+to activate it:
+    source matrix_env/bin/activate
+if sys.base_prefix != sys.prefix: you are in the venv
+base_prefix is the name of the envirenement of the user
 
-
+`.toml` is a configuration file format, It only stores structured data
+Poetry reads and uses pyproject.toml
+It uses it to:
+    *create virtual environment
+    *install dependencies
+    *manage project
+Poetry creates a virtual environment for your project automatically in:
+    * ~/.cache/pypoetry/virtualenvs/
+    (poetry env info)
 
 # pydantic 
 str : min_length, max_length, pattern, strip_whitespace, to_lower, to_upper
