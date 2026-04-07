@@ -100,7 +100,7 @@ Boolean : True / False
 
 None : the null type of values or absence of a valuel
 
-# Functions && Variables in Python
+# Some methods Python
 
 to get from the standard input we use:`input()`
 
@@ -326,23 +326,57 @@ It tells Python:
 A separate Python workspace with its own packages and Python interpreter
 to creat a virtual env:
     python -m venv matrix_env
+
 to activate it:
     source matrix_env/bin/activate
 if sys.base_prefix != sys.prefix: you are in the venv
 base_prefix is the name of the envirenement of the user
 
+there is a private data that we need to protect and don't put directly in our code, so we use :
+   load_dotenv() method to load them from .env to memory to use them
+   to check if the variable we need exist, we do : os.getenv("var_name")
+   to check if .env file exist: os.path.exists("filename")
+
 `.toml` is a configuration file format, It only stores structured data
-Poetry reads and uses pyproject.toml
+`Poetry` reads and uses pyproject.toml
 It uses it to:
     *create virtual environment
     *install dependencies
     *manage project
+
 Poetry creates a virtual environment for your project automatically in:
     * ~/.cache/pypoetry/virtualenvs/
     (poetry env info)
 
-# pydantic 
+# pydantic (BaseModel)
+`BaseModel` tells that the data will entrer must have a defined form
+`Field` is a function used to define validation rules, default values, and metadata for attributes in a BaseModel
+`model validator` is logic that checks or modifies the entire model’s data to ensure it is valid.
+Model validator modes:
+1. mode="before"
+    Runs before validation of field
+    Receives raw input (dict)
+2. mode="after"
+    Runs after validation of field
+    Works with the final model instance
 str : min_length, max_length, pattern, strip_whitespace, to_lower, to_upper
 int, float : gt (>), ge(>=), lt(<), le(<=), multiple_of
 bool: default, description, alias
 list: min_length, max_length
+`Enum` lets you create a variable that can only take predefined values.
+
+# Lambda
+
+`lambda` is a small anonymous function written in one line, used for simple operations without defining a full function.
+        Exs: add = lambda x, y: x + y
+            (lambda x: x + 1)(5)
+            list(map(lambda x: x * 2, nums))
+# Functions
+
+`Callables` in Python are anything you can “call” using parentheses () like a function
+`*args` → many positional arguments → tuple
+`**kwargs` → many keyword arguments → dict
+`nonlocal` -> a keyword that lets a function modify a variable from its outer (enclosing) function.
+    nonlocal only works if the variable already exists in an outer function
+    It does NOT work for global variables
+    It MUST be declared before using the variable
