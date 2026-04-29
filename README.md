@@ -93,6 +93,9 @@ Dictionary :  Data is stored as key: value pairs within curly braces {}
         my_dict = {"name": "Jake", "age": 22, "city": "London"}
     Using the dict() constructor
         another_dict = dict(brand="Ford", model="Mustang", year=1964)
+    this is how to initialise an empty dictionnaty :
+        keys = ['A', 'B', 'C', 'D']
+        graph = dict.fromkeys(keys, [])
 
 set : an unordered collection of unique elements, Duplicate items are not allowed
 
@@ -338,6 +341,7 @@ there is a private data that we need to protect and don't put directly in our co
    to check if .env file exist: os.path.exists("filename")
 
 `.toml` is a configuration file format, It only stores structured data
+
 `Poetry` reads and uses pyproject.toml
 It uses it to:
     *create virtual environment
@@ -350,7 +354,9 @@ Poetry creates a virtual environment for your project automatically in:
 
 # pydantic (BaseModel)
 `BaseModel` tells that the data will entrer must have a defined form
+
 `Field` is a function used to define validation rules, default values, and metadata for attributes in a BaseModel
+
 `model validator` is logic that checks or modifies the entire model’s data to ensure it is valid.
 Model validator modes:
 1. mode="before"
@@ -380,3 +386,6 @@ list: min_length, max_length
     nonlocal only works if the variable already exists in an outer function
     It does NOT work for global variables
     It MUST be declared before using the variable
+
+In Python, a first-class citizen (or first-class object) is an entity that is treated like any other value in the language. This means it can be manipulated, passed around, and used without restrictions. 
+While many programming languages treat basic data types (like integers and strings) as first-class citizens, Python is notable for treating functions and classes as first-class citizens as well.
