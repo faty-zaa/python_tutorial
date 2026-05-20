@@ -279,7 +279,7 @@ __bases__ − A possibly empty tuple containing the base classes, in the order o
 
 `instance attribute` in Python is a variable that is specific to an individual object of a class. It is defined inside the __init__() method.
 
-__init__ is a special function inside a class
+__init__ is a special function inside a class (called constructor)
 p = Plant("Rose", 10, 3)
 Python automatically calls:
 Plant.__init__(p, "Rose", 10, 3)
