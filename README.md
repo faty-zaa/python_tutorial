@@ -12,6 +12,27 @@ general-purpose interpreted, interactive, object-oriented, and high-level progra
 
  Python is processed at runtime by the interpreter. You do not need to compile your program before executing it, also Python is a completely object-oriented language. Everything in a Python program is an object.
 
+ iterpreter component:
+ +----------------------------+
+| Parser                     |
++----------------------------+
+| Compiler                   |
++----------------------------+
+| Bytecode Generator         |
++----------------------------+
+| Python Virtual Machine     |
++----------------------------+
+| Garbage Collector          |
++----------------------------+
+| Memory Manager             |
++----------------------------+
+| Standard Library           |
++----------------------------+
+The Python interpreter is the complete program you install and run (python or python3).
+The Python Virtual Machine (PVM) is a component inside the interpreter that executes Python bytecode.
+Python source code is first compiled to bytecode, then the PVM interprets that bytecode.
+The CPU never executes Python bytecode directly; it executes the compiled machine code of the interpreter, which in turn carries out the bytecode's instructions.
+
 Using Python, we can perform:
 *Web development*
 *Data analysis and machine learning*
