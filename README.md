@@ -417,3 +417,68 @@ While many programming languages treat basic data types (like integers and strin
         self          cls          nothing
           │            │            │
        object        class       independent
+
+                              PYTHON METHODS
+                                    │
+              ┌─────────────────────┼─────────────────────┐
+              ↓                     ↓                     ↓
+       INSTANCE METHOD         CLASS METHOD         STATIC METHOD
+              │                     │                     │
+            self                   cls                 nothing
+              │                     │                     │
+           object                 class             independent
+              │                     │                     │
+      ┌───────┼───────┐             │             ┌──────┴──────┐
+      ↓       ↓       ↓             ↓             ↓             ↓
+    object   object   object     class state     utility      helper
+    state    methods  attrs      /constructor   function     logic
+
+                              SPECIAL METHODS
+                                    │
+                           "__" + name + "__"
+                                    │
+                    ┌───────────────┼───────────────┐
+                    ↓               ↓               ↓
+                 __init__        __str__         __len__
+                    │               │               │
+                 creation        print()          len()
+                    │               │               │
+                  object          object          object
+
+
+                              OPERATOR METHODS
+                                    │
+                 ┌──────────────────┼──────────────────┐
+                 ↓                  ↓                  ↓
+              __add__            __eq__             __lt__
+                 │                  │                  │
+                +                  ==                  <
+                 │                  │                  │
+             a + b              a == b              a < b
+
+
+                              ABSTRACT METHODS
+                                    │
+                            @abstractmethod
+                                    │
+                              ┌─────┴─────┐
+                              ↓           ↓
+                          interface   requirement
+                              │           │
+                              └─────┬─────┘
+                                    ↓
+                              subclass MUST
+                              implement it
+
+
+                               PROPERTY
+                                  │
+                             @property
+                                  │
+                    ┌─────────────┼─────────────┐
+                    ↓             ↓             ↓
+                  getter        setter        deleter
+                    │             │             │
+                  read          modify        delete
+                    │             │             │
+               object.attr   object.attr = x   del object.attr
