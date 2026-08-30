@@ -404,3 +404,16 @@ list: min_length, max_length
 
 In Python, a first-class citizen (or first-class object) is an entity that is treated like any other value in the language. This means it can be manipulated, passed around, and used without restrictions. 
 While many programming languages treat basic data types (like integers and strings) as first-class citizens, Python is notable for treating functions and classes as first-class citizens as well.
+
+# TYPES OF METHODS
+
+                    User class
+                       │
+          ┌────────────┼────────────┐
+          ↓            ↓            ↓
+     Instance       Class        Static
+      method        method        method
+          │            │            │
+        self          cls          nothing
+          │            │            │
+       object        class       independent
