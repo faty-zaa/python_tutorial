@@ -43,14 +43,8 @@ code in python go across 3 steps :
     `PVM`:python virtual machine reads and interprets this bytecode through an interpreter loop. The interpreter executes the instructions on the host machine, converting them into machine-level instructions that the computer's processor can understand and carry out.
     The Python VM maintains a Python object model to represent data types, such as integers, strings, lists, and custom objects. It manages the creation, manipulation, and destruction of these objects during execution.
     The Python VM handles memory allocation and garbage collection to manage the memory used by Python objects dynamically.
-
-
-# print ("Hello, World!")
-
-to write code in python, we don't have to use brackets{}, we've just to respect the (TAB) under kywords
-
-`python basic sytax` : https://www.tutorialspoint.com/python/python_basic_syntax.htm
-https://www.tutorialspoint.com/python/python_variables.htm
+    Python automatically manages memory for you using reference counting and garbage collector
+    Python garbage collector helps you avoid memory leaks by detecting circular references and destroy objects appropriately.
 
 # the Python keywords
 
@@ -87,7 +81,11 @@ float (floating point real values)
 
 complex (complex numbers)
 
-string (non-numeric data type)
+string (non-numeric data type) "empty strings ('') are not None, they are empty, not like C"
+None is not zero (0, 0.0, …)
+None is not the same as False
+None is not the same as an empty string ('')
+Comparing None to any value will return False except None itself
 
 raw string is a string literal created by prefixing the string with the letter r or R. This tells the Python interpreter to treat backslashes (\) as literal characters, rather than as special escape characters. (raw_string = r"This is a newline:\n" --> This is a newline:\n)
 
@@ -198,6 +196,10 @@ Python has the import keyword for this purpose
 The ____init__.py file in Python serves two primary purposes: it marks a directory as a regular Python package, and it provides a place for initialization code when that package is importe
 
 # Python data types
+
+An object whose internal state cannot be changed is called immutable for example a number, a string, and a tuple
+An object whose internal state can be changed is called mutable for example a list, a set, and a dictionary
+immutable: you cannot add a new element to or remove an element from it
 
 `lists[]` :A List is a collection of ordered, mutable (Elements can be modified after creation) elements that can hold a variety of data types
     Example: [1, 2, 3, 4, 5]
@@ -328,6 +330,17 @@ you can access the private variable using name mangling
 `pass` is a do-nothing statement.
 It tells Python:
 “There must be a statement here, but I intentionally want nothing to happen.”
+
+# Scopes and Namespace
+
+The scopes of variables are the parts of the code where you can access the variables.
+The built-in scope is accessible from everywhere.
+The global scope (or module scope) can be accessible from every part of the module.
+The local scope is accessible from inside a function.
+Python stores the objects and their bindings in the namespace of the scope.
+Python looks up an object in the current scope first and goes up to the enclosing scope if Python doesn’t find it.
+Python scopes are nested.
+Use the global keyword if you want to access a global variable from inside a function.
 
 # POLYMORPHISM AND ABSTRACTION
     Polymorphism means "many forms". In programming it means "many types" and refers to the possibility that a single object may have multiple types.
