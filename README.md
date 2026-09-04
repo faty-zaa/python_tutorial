@@ -73,7 +73,66 @@ match-case has been introduced, which is similar to the switch-case construct av
 The for loop in Python provides the ability to loop over the items of any sequence --> for num in numbers:
                  total += num
 
-# Data types
+# Python data types
+
+An object whose internal state cannot be changed is called immutable for example a number, a string, and a tuple
+An object whose internal state can be changed is called mutable for example a list, a set, and a dictionary
+immutable: you cannot add a new element to or remove an element from it
+
+`lists[]` :A List is a collection of ordered, mutable (Elements can be modified after creation) elements that can hold a variety of data types
+    Example: [1, 2, 3, 4, 5]
+we don't put values in list with index, we use append(), Allows duplicates && Supports indexing and slicing
+The slice seq[start:stop:step] selects elements starting at the index start and stopping at the index stop (excluding the element at the index stop).
+
+`sets{}` :A Set is an unordered collection of unique elements, Duplicate values are automatically removed, does not Support indexing and slicing (not a sequence)
+    Example: {1, 2, 3, 4, 5}
+    `intersection`: used to see common data
+    `union`: to union data
+    `difference`: to see the unique data between datas
+
+`Tuples()` :A Tuple is an ordered, immutable collection of elements, Once created, elements cannot be modified, Allows duplicates && Supports indexing and slicing
+Tuples are hashable and can be used as dictionary keys, unlike lists.
+Hashable = something Python can lock in a box and trust it will never change
+    Example: (1, 2, 3, 4, 5)
+tuples protect the structure of your data
+Tuples can be dictionary keys
+    `Unpacking` means:
+    Taking a collection (tuple, list, etc.) and assigning its elements to multiple variables in one line.
+
+`Dictionaries{}` :A dictionary (dic()) is also a non-homogeneous data structure that stores key-value pairs, The dictionary doesn't allow duplicate keys, ordred && mutable but not a sequence (you can't use indexing)
+    Example: {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}
+    ->keys() : gives you only the names
+    ->values() : gives you only the values or numbers
+    ->items() : name + number together as tuples
+        You can loop like this:
+            for item, quantity in bag.items():
+                print(item, quantity)
+    ->get() : Safely gets a value without crashing
+        get(key, default)
+            Means:
+            “If the key exists → give me its value
+            If it doesn’t exist → give me this default”
+    ->update() : Adds or changes many things at once /ex:bag.update({"apple": 5, "pear": 2})
+    !!!important: if you have nested dictionnaries, you can use ft.items() to get nested dictionnaries, and if there is another nested dict, use the key of each or loop to get values like that :
+         print(players.items())
+        print(players["alice"].items())
+        print(players["bob"]["items"].items())
+
+                          Python collections
+                           │
+             ┌─────────────┴─────────────┐
+             │                           │
+         Sequences                  Non-sequences
+             │                           │
+      ┌──────┼──────┐              ┌─────┴─────┐
+      ↓      ↓      ↓              ↓           ↓
+    list   tuple   str           dict        set
+      │      │      │              │           │
+    ordered ordered ordered      ordered     unordered
+    indexed  indexed indexed     by keys     by membership
+
+
+# Data types examples
 
 int (signed integers)
 
@@ -89,7 +148,7 @@ Comparing None to any value will return False except None itself
 
 raw string is a string literal created by prefixing the string with the letter r or R. This tells the Python interpreter to treat backslashes (\) as literal characters, rather than as special escape characters. (raw_string = r"This is a newline:\n" --> This is a newline:\n)
 
-List Data Type : [2023, "hi", 3.11, 5+6j, 1.23E]
+List Data Type : [2023, "hi", 3.11, 5+6j, 1.23E] ordered
 
 Tuple Data Type : (2023, "hi", 3.11, 5+6j, 1.23E) read-only lists
 
@@ -195,51 +254,6 @@ Python has the import keyword for this purpose
     sys is a built-in Python module that gives your program direct access to the Python runtime and the operating system interface
 The ____init__.py file in Python serves two primary purposes: it marks a directory as a regular Python package, and it provides a place for initialization code when that package is importe
 
-# Python data types
-
-An object whose internal state cannot be changed is called immutable for example a number, a string, and a tuple
-An object whose internal state can be changed is called mutable for example a list, a set, and a dictionary
-immutable: you cannot add a new element to or remove an element from it
-
-`lists[]` :A List is a collection of ordered, mutable (Elements can be modified after creation) elements that can hold a variety of data types
-    Example: [1, 2, 3, 4, 5]
-we don't put values in list with index, we use append()
-
-`sets{}` :A Set is an unordered collection of unique elements, Duplicate values are automatically removed, does not Support indexing and slicing
-    Example: {1, 2, 3, 4, 5}
-    `intersection`: used to see common data
-    `union`: to union data
-    `difference`: to see the unique data between datas
-
-`Tuples()` :A Tuple is an ordered, immutable collection of elements, Once created, elements cannot be modified
-Tuples are hashable and can be used as dictionary keys, unlike lists.
-Hashable = something Python can lock in a box and trust it will never change
-    Example: (1, 2, 3, 4, 5)
-tuples protect the structure of your data
-Tuples can be dictionary keys
-    `Unpacking` means:
-    Taking a collection (tuple, list, etc.) and assigning its elements to multiple variables in one line.
-
-`Dictionaries{}` :A dictionary (dic()) is also a non-homogeneous data structure that stores key-value pairs, The dictionary doesn't allow duplicate keys
-    Example: {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}
-    ->keys() : gives you only the names
-    ->values() : gives you only the values or numbers
-    ->items() : name + number together as tuples
-        You can loop like this:
-            for item, quantity in bag.items():
-                print(item, quantity)
-    ->get() : Safely gets a value without crashing
-        get(key, default)
-            Means:
-            “If the key exists → give me its value
-            If it doesn’t exist → give me this default”
-    ->update() : Adds or changes many things at once /ex:bag.update({"apple": 5, "pear": 2})
-    !!!important: if you have nested dictionnaries, you can use ft.items() to get nested dictionnaries, and if there is another nested dict, use the key of each or loop to get values like that :
-         print(players.items())
-        print(players["alice"].items())
-        print(players["bob"]["items"].items())
-
-    
 # Python generators && comprehension
 
 `generator` is a function that acts as an iterator to produce a sequence of values one at a time, and only when requested. They are memory efficient because they don't store the entire sequence in memory at once; instead, they pause their execution with the `yield` keyword and resume when the next value is needed.
@@ -408,8 +422,11 @@ list: min_length, max_length
 # Functions
 
 `Callables` in Python are anything you can “call” using parentheses () like a function
+
 `*args` → many positional arguments → tuple
+
 `**kwargs` → many keyword arguments → dict
+
 `nonlocal` -> a keyword that lets a function modify a variable from its outer (enclosing) function.
     nonlocal only works if the variable already exists in an outer function
     It does NOT work for global variables
@@ -417,6 +434,10 @@ list: min_length, max_length
 
 In Python, a first-class citizen (or first-class object) is an entity that is treated like any other value in the language. This means it can be manipulated, passed around, and used without restrictions. 
 While many programming languages treat basic data types (like integers and strings) as first-class citizens, Python is notable for treating functions and classes as first-class citizens as well.
+
+`Decorator` -> A decorator is a function that changes the behavior of another function without explicitly modifying it
+  Use the @ symbol to decorate a function
+  Use the wraps function from the functools built-in module to retain the documentation and name of the original function
 
 # TYPES OF METHODS
 
@@ -494,4 +515,6 @@ While many programming languages treat basic data types (like integers and strin
                     │             │             │
                   read          modify        delete
                     │             │             │
-               object.attr   object.attr = x   del object.attr
+               object.attr   object.attr = x   del object.
+
+https://www.pythontutorial.net/advanced-python/
